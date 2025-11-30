@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Adaptive Blocks</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: Lato, sans-serif;
+			color: #000;
+		}
+
+		img {
+			max-width: 100%;
+			display: block;
+		}
+
+		.container {
+			max-width: 1100px;
+			margin: 0 auto;
+			padding: 0 20px;
+		}
+
+		/* HEADER */
+		.header {
+			position: relative;
+			padding: 120px 0 150px;
+			text-align: center;
+			color: #fff;
+		}
+
+		.header__bg {
+			position: absolute;
+			inset: 0;
+			background: url('/img/header/bg.jpg') center/cover no-repeat;
+			z-index: -1;
+		}
+
+		.header__logo {
+			margin-bottom: 100px;
+			display: flex;
+			justify-content: center;
+		}
+
+		.header__title {
+			font-size: 34px;
+			font-weight: 900;
+			text-transform: uppercase;
+			letter-spacing: .16em;
+		}
+
+		.header__subtitle {
+			font-size: 22px;
+			margin-top: 10px;
+		}
+
+		.header__button {
+			display: inline-block;
+			margin-top: 50px;
+			padding: 14px 38px;
+			border: 1px solid #fff;
+			color: #fff;
+			text-transform: uppercase;
+			font-size: 16px;
+			letter-spacing: 0.06em;
+		}
+
+		@media(max-width:992px) {
+			.header {
+				padding: 90px 0 110px;
+			}
+
+			.header__logo {
+				margin-bottom: 70px;
+			}
+
+			.header__title {
+				font-size: 28px;
+			}
+
+			.header__subtitle {
+				font-size: 18px;
+			}
+		}
+
+		@media(max-width:576px) {
+			.header {
+				padding: 70px 0 90px;
+			}
+
+			.header__logo {
+				margin-bottom: 40px;
+			}
+
+			.header__title {
+				font-size: 22px;
+			}
+
+			.header__subtitle {
+				font-size: 14px;
+			}
+
+			.header__button {
+				padding: 10px 25px;
+				font-size: 14px;
+			}
+		}
+
+		/* NAVIGATOR */
+		.navigator__body {
+			padding: 20px 0;
+			border: 1px solid #eee;
+		}
+
+		.navigator__list {
+			display: flex;
+			justify-content: center;
+			gap: 40px;
+			list-style: none;
+		}
+
+		.navigator__item a {
+			color: #3c3c3c;
+			text-decoration: none;
+			transition: .3s;
+		}
+
+		.navigator__item a:hover {
+			color: #ada074;
+		}
+
+		@media(max-width:768px) {
+			.navigator__list {
+				flex-wrap: wrap;
+				gap: 20px;
+			}
+		}
+
+		/* ABOUT */
+		.about {
+			padding: 100px 0;
+		}
+
+		.about__title {
+			text-align: center;
+			text-transform: uppercase;
+			font-size: 32px;
+			font-weight: 700;
+			letter-spacing: .15em;
+			margin-bottom: 35px;
+			position: relative;
+			padding-bottom: 25px;
+		}
+
+		.about__title::after {
+			content: "";
+			width: 80px;
+			height: 2px;
+			background: #000;
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: 0;
+		}
+
+		.about__subtitle {
+			max-width: 680px;
+			margin: 0 auto 60px;
+			text-align: center;
+			font-size: 14px;
+			color: #777;
+			line-height: 1.6;
+		}
+
+		.about__columns {
+			display: flex;
+			gap: 40px;
+		}
+
+		.about__column {
+			flex: 1;
+			text-align: center;
+		}
+
+		.item-about__icon {
+			width: 90px;
+			height: 90px;
+			border-radius: 50%;
+			border: 2px solid #f0f0f0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 0 auto 30px;
+		}
+
+		.item-about__title {
+			font-size: 20px;
+			letter-spacing: .1em;
+			margin-bottom: 20px;
+		}
+
+		.item-about__text {
+			color: #777;
+			line-height: 1.5;
+			font-size: 14px;
+		}
+
+		@media(max-width:992px) {
+			.about__columns {
+				gap: 20px;
+			}
+		}
+
+		@media(max-width:768px) {
+			.about__columns {
+				flex-direction: column;
+				gap: 40px;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<header class="header">
+		<div class="header__bg"></div>
+		<div class="container">
+			<div class="header__logo"><img src="/img/header/logo.svg" alt="logo"></div>
+			<h1 class="header__title">Clear, smart, attractive design</h1>
+			<p class="header__subtitle">for your app, logo, website</p>
+			<a href="#" class="header__button">Read more</a>
+		</div>
+	</header>
+
+	<nav class="navigator">
+		<div class="navigator__body">
+			<ul class="navigator__list">
+				<li class="navigator__item"><a href="#">HOME</a></li>
+				<li class="navigator__item"><a href="#">ABOUT US</a></li>
+				<li class="navigator__item"><a href="#">PORTFOLIO</a></li>
+				<li class="navigator__item"><a href="#">CONTACT</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<section class="about">
+		<div class="container">
+			<div class="about__title">ABOUT</div>
+			<p class="about__subtitle">We specialize in contemporary, functional, and stunning websites with design that
+				really brings that WOW factor.</p>
+
+			<div class="about__columns">
+				<div class="about__column">
+					<div class="item-about__icon"><img src="/img/about/01.svg"></div>
+					<div class="item-about__title">WEB</div>
+					<div class="item-about__text">Unique and functional design through innovation and creativity.</div>
+				</div>
+
+				<div class="about__column">
+					<div class="item-about__icon"><img src="/img/about/02.svg"></div>
+					<div class="item-about__title">IOS & ANDROID</div>
+					<div class="item-about__text">We bring businesses closer to clients through insights and targeting.</div>
+				</div>
+
+				<div class="about__column">
+					<div class="item-about__icon"><img src="/img/about/03.svg"></div>
+					<div class="item-about__title">MARKETING</div>
+					<div class="item-about__text">Helping you set the right goals and build the right paths.</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</body>
+
+</html>
